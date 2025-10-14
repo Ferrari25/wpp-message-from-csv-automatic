@@ -63,11 +63,12 @@ Cuando ejecutas el script (o incluso cuando pruebas los links wa.me manualmente 
 Es una especie de bloqueo temporal y preventivo para desalentar a los spammers de verificar listas de números masivamente. Tú, sin quererlo, has activado esta defensa. Por eso, lo que antes funcionaba, ahora no.
 
 ¿Qué Hacemos Ahora? Un Plan de Acción
-Paso 1: Período de "Enfriamiento" (El más importante)
+
+# Paso 1: Período de "Enfriamiento" (El más importante)
 
 Te pido que hagas una pausa. Cierra el navegador que controla Selenium, no ejecutes el script y no intentes abrir links de wa.me manualmente por al menos unas cuantas horas. Necesitamos dejar que el sistema de WhatsApp "se olvide" de tu actividad y quite el bloqueo temporal de tu red.
 
-Paso 2: Hacer el Script Más "Humano" (Más lento)
+# Paso 2: Hacer el Script Más "Humano" (Más lento)
 
 Si el paso 2 funcionó, significa que el problema es la velocidad. Para evitar volver a ser bloqueados, debemos hacer que nuestro script sea más lento y parezca menos un robot.
 
