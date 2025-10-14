@@ -6,7 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.chrome.service import Service
-from tqdm import tqdm # Importamos la librería para la barra de progreso
+from tqdm import tqdm # librería para la barra de progreso
 
 # --- CONFIGURACIÓN ---
 NOMBRE_ARCHIVO_CSV = 'alumnos.csv'
@@ -157,4 +157,5 @@ def main():
     print("\n=================================================================\n")
 
 if __name__ == "__main__":
+
     main()
