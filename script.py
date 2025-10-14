@@ -11,13 +11,41 @@ from tqdm import tqdm # librería para la barra de progreso
 # --- CONFIGURACIÓN ---
 NOMBRE_ARCHIVO_CSV = 'alumnos.csv'
 MENSAJE_PLANTILLA = """
-Hola {nombre}, ¿cómo estás?
+Buenos días/tardes, {nombre}.
 
-Este es un mensaje de prueba automatizado para recordarte algo importante.
+Mi nombre es Santiago Ferrari y te escribo desde la Secretaría de Asuntos Estudiantiles (Asest) de la UTN Facultad Regional Delta.
 
-¡Que tengas un buen día!
 
-Saludos.
+Me comunico con vos porque figuras como beneficiario/a del programa de Becas Progresar y he sido asignado/a como tu tutor/a para acompañarte durante esta última parte del año. El objetivo es apoyarte en tu trayectoria académica y asegurar que cumplas con los requisitos para mantener y renovar la beca.
+
+
+Para poder hacer este seguimiento, es de carácter obligatorio que actualices tu información académica. Te ofrecemos dos maneras de hacerlo:
+
+Opción Online: Completando el siguiente formulario de Google. No te tomará más de unos minutos.
+Link al formulario: https://forms.gle/byZPdtF45Se8joWg9
+
+Opción Presencial: Acercándote a la oficina de Asest en la facultad para que podamos conversar y completar la información juntos.
+
+Es fundamental que respondas a la brevedad. Mantener tus datos actualizados es una de las obligaciones que asumiste con el programa.
+
+Te recordamos que, según el reglamento de Progresar, existen varias causales que pueden llevar al cese o pérdida de la beca, entre ellas:
+
+* La pérdida de la condición de alumno/a regular.
+
+* Estar excedido/a dos o más años en la duración de la carrera.
+
+* El incumplimiento de cualquiera de las obligaciones del programa.
+
+Este seguimiento es una herramienta para ayudarte a evitar estos inconvenientes y asegurar la correcta renovación de tu beca el próximo año.
+
+Quedo a tu disposición por cualquier consulta.
+
+Saludos cordiales,
+
+Santiago Ferrari,
+Tutor/a de Becas Progresar
+Secretaría de Asuntos Estudiantiles (Asest)
+UTN Facultad Regional Delta
 """
 # --- FIN DE LA CONFIGURACIÓN ---
 
@@ -159,3 +187,4 @@ def main():
 if __name__ == "__main__":
 
     main()
+
