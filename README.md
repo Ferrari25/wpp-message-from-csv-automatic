@@ -32,10 +32,12 @@ Para ejecutar el script desde el código fuente, necesitarás:
 ---
 
 ## ⚙️ Estructura de la Carpeta
+```
 /TuProyecto/
-  ├── script.py          # El script principal de Python\n
+  ├── script.py          # El script principal de Python
   ├── chromedriver.exe   # El controlador de Chrome
   └── alumnos.csv        # Tu base de datos de contactos
+```
 
 ## ⚙️ Instala las dependencias de Python:
 bash
