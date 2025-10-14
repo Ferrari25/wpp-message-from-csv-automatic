@@ -109,7 +109,7 @@ def enviar_mensaje_whatsapp(driver, alumno, mensaje_template):
         boton_enviar.click()
         
         # Damos tiempo a que el mensaje se marque como enviado (doble tick)
-        time.sleep(5)
+        time.sleep(7)
         
         end_time = time.time() # Guardamos el tiempo de finalización
         duracion = round(end_time - start_time, 1)
@@ -187,4 +187,5 @@ def main():
 if __name__ == "__main__":
 
     main()
+
 
