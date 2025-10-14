@@ -1,6 +1,6 @@
 # Bot de Mensajes Masivos para WhatsApp
 
-Este es un script de Python diseñado para automatizar el envío de mensajes personalizados de WhatsApp a una lista de contactos extraída de un archivo CSV. El script utiliza Selenium para controlar un navegador web, simular el comportamiento humano y enviar los mensajes de forma robusta.
+Este es un script de Python diseñado para automatizar el envío de mensajes personalizados de WhatsApp a una lista de contactos extraída de un archivo CSV. El script utiliza Selenium para controlar un navegador web.
 
 ## ✨ Características Principales
 
