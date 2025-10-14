@@ -70,7 +70,7 @@ Te pido que hagas una pausa. Cierra el navegador que controla Selenium, no ejecu
 
 # Paso 2: Hacer el Script Más "Humano" (Más lento)
 
-Si el paso 2 funcionó, significa que el problema es la velocidad. Para evitar volver a ser bloqueados, debemos hacer que nuestro script sea más lento y parezca menos un robot.
+Si el paso 1 funcionó, significa que el problema es la velocidad. Para evitar volver a ser bloqueados, debemos hacer que nuestro script sea más lento y parezca menos un robot.
 
 Abre tu script.py, ve a la función main y busca la línea time.sleep(8) que está dentro del bucle. Vamos a aumentar esa pausa considerablemente para darle más aire a WhatsApp entre cada mensaje.
 
