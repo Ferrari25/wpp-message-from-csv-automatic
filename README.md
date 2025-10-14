@@ -31,13 +31,6 @@ Para ejecutar el script desde el código fuente, necesitarás:
 
 ---
 
-## ⚙️ Instalación y Configuración
-
-Sigue estos pasos para poner en marcha el proyecto:
-
-**1. Clona o descarga este repositorio:**
-
-
 ## ⚙️ Estructura de la Carpeta
 /TuProyecto/
   ├── script.py          # El script principal de Python
@@ -47,7 +40,7 @@ Sigue estos pasos para poner en marcha el proyecto:
 ## ⚙️ Instala las dependencias de Python:
 bash
 pip install selenium tqdm pyinstaller
-```bash
+bash
 
 ## ⚙️ Uso del Script
 python script.py
