@@ -1,18 +1,18 @@
 import csv
 import time
+import random 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.chrome.service import Service
-from tqdm import tqdm # librería para la barra de progreso
+from tqdm import tqdm # Importamos la librería para la barra de progreso
 
 # --- CONFIGURACIÓN ---
-NOMBRE_ARCHIVO_CSV = 'alumnos.csv'
-MENSAJE_PLANTILLA = """
-Buenos días/tardes, {nombre}.
 
+texto = """
+Buenos días/tardes, {nombre}.
 Mi nombre es Santiago Ferrari y te escribo desde la Secretaría de Asuntos Estudiantiles (Asest) de la UTN Facultad Regional Delta.
 
 
@@ -24,21 +24,31 @@ Para poder hacer este seguimiento, es de carácter obligatorio que actualices tu
 Opción Online: Completando el siguiente formulario de Google. No te tomará más de unos minutos.
 Link al formulario: https://forms.gle/byZPdtF45Se8joWg9
 
-Opción Presencial: Acercándote a la oficina de Asest en la facultad para que podamos conversar y completar la información juntos.
+Opción Presencial: Acercándote a la oficina de Asuntos Estudiantiles (Asest) en la facultad para que podamos conversar y completar la información juntos.
 
 Es fundamental que respondas a la brevedad. Mantener tus datos actualizados es una de las obligaciones que asumiste con el programa.
 
 Te recordamos que, según el reglamento de Progresar, existen varias causales que pueden llevar al cese o pérdida de la beca, entre ellas:
 
-* La pérdida de la condición de alumno/a regular.
-
-* Estar excedido/a dos o más años en la duración de la carrera.
-
-* El incumplimiento de cualquiera de las obligaciones del programa.
+**La pérdida de la condición de alumno/a regular.
+**Estar excedido/a dos o más años en la duración de la carrera.
+**El incumplimiento de cualquiera de las obligaciones del programa.
 
 Este seguimiento es una herramienta para ayudarte a evitar estos inconvenientes y asegurar la correcta renovación de tu beca el próximo año.
 
 Quedo a tu disposición por cualquier consulta.
+Saludos cordiales,
+
+Santiago Ferrari,
+Tutor/a de Becas Progresar
+Secretaría de Asuntos Estudiantiles (Asest)
+UTN Facultad Regional Delta
+"""
+
+
+NOMBRE_ARCHIVO_CSV = 'alumnos.csv'
+MENSAJE_PLANTILLA = """
+Buenos días/tardes, {nombre}.
 
 Saludos cordiales,
 
@@ -47,6 +57,9 @@ Tutor/a de Becas Progresar
 Secretaría de Asuntos Estudiantiles (Asest)
 UTN Facultad Regional Delta
 """
+
+
+
 # --- FIN DE LA CONFIGURACIÓN ---
 
 
@@ -77,12 +90,14 @@ def enviar_mensaje_whatsapp(driver, alumno, mensaje_template):
     telefono = ''.join(filter(str.isdigit, alumno['telefono']))
     
     if not telefono.startswith('549'):
-        telefono_completo = '549' + telefono
+        telefono_completo = '+549' + telefono
     else:
         telefono_completo = telefono
 
     mensaje_personalizado = mensaje_template.format(nombre=primer_nombre)
     url = f"https://web.whatsapp.com/send?phone={telefono_completo}"
+    
+    
     
     driver.get(url)
     
@@ -98,7 +113,14 @@ def enviar_mensaje_whatsapp(driver, alumno, mensaje_template):
         for linea in mensaje_personalizado.split('\n'):
             caja_mensaje.send_keys(linea)
             caja_mensaje.send_keys(webdriver.common.keys.Keys.SHIFT + webdriver.common.keys.Keys.ENTER)
-            time.sleep(0.3)
+            pausa_aleatoria = random.uniform(0.5,1.5) # Pausa aleatoria entre 1 y 6 segundos
+            # Actualizamos la barra de progreso con un mensaje antes de la pausa
+            # La variable 'alumno' debe estar disponible en tu bucle 'for' en la función main
+            # y pasada a esta función. Asumiendo que se llama 'nombre_alumno'.
+            tqdm.write(f"✔ Mensaje enviado a {nombre}. Pausando por {pausa_aleatoria} segundos para simular comportamiento humano...")
+
+            time.sleep(pausa_aleatoria)
+            #time.sleep(0.3)
 
         # XPATH PERSONALIZADO (TU DESCUBRIMIENTO)
         boton_enviar_xpath = '//*[@id="main"]/footer/div[1]/div/span/div/div[2]/div/div[4]/div/span/div/div/div[1]'
@@ -109,7 +131,7 @@ def enviar_mensaje_whatsapp(driver, alumno, mensaje_template):
         boton_enviar.click()
         
         # Damos tiempo a que el mensaje se marque como enviado (doble tick)
-        time.sleep(7)
+        time.sleep(5)
         
         end_time = time.time() # Guardamos el tiempo de finalización
         duracion = round(end_time - start_time, 1)
@@ -185,7 +207,4 @@ def main():
     print("\n=================================================================\n")
 
 if __name__ == "__main__":
-
     main()
-
-
